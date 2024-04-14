@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+<h1>Recordings</h1>
+<ul>
+    @foreach (var recording in Model.Recordings)
+    {
+        <li>
+            <audio controls>
+                <source src="@Url.Page("Index", "GetAudio", new { id = recording.Sid })" type="audio/mp4">
+                Your browser does not support the audio element.
+            </audio>
+        </li>
+    }
+</ul>
